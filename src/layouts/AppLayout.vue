@@ -1,6 +1,8 @@
 <template>
-    <div>
-        <slot></slot>
+    <div class="flex flex-col h-full min-h-screen text-white bg-black">
+        <main>
+            <slot></slot>
+        </main>
     </div>
 </template>
 
