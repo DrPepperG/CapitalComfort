@@ -9,7 +9,10 @@ module.exports = {
     theme: {
         extend: {
             colors: {
-                'cc-black': '#363636',
+                'cc-black': {
+                    lighter: '#474747',
+                    DEFAULT: '#363636',
+                },
                 'cc-blue': '#4273ff',
                 'cc-yellow': '#ffc600',
             },
