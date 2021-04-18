@@ -1,5 +1,7 @@
 <template>
     <app-layout>
+        <section>
+        </section>
     </app-layout>
 </template>
 

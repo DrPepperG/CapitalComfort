@@ -6,16 +6,17 @@
             <!-- Primary Navigation Menu -->
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex justify-between h-16">
-                    <div class="flex">
-                        <!-- Logo -->
-                        <div class="flex-shrink-0 flex items-center">
-                            <app-logo class="h-3/5 mr-1" />
-                            <h1 class="text-xl font-bold uppercase">Capital Comfort</h1>
-                        </div>
+                    <!-- Logo -->
+                    <div class="flex-shrink-0 flex items-center">
+                        <app-logo class="h-10 w-10 mr-1" />
+                        <h1 class="text-xl font-bold uppercase">Capital Comfort</h1>
+                    </div>
 
-                        <!-- Navigation Links -->
-                        <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                        </div>
+                    <!-- Navigation Links -->
+                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                        <app-nav-link v-for="(link, title) in pages" v-bind:key="title" :to="link">
+                            {{ title }}
+                        </app-nav-link>
                     </div>
 
                     <!-- Hamburger -->
@@ -39,15 +40,20 @@
 
 <script>
 import AppLogo from '@/components/AppLogo.vue';
+import AppNavLink from '@/components/AppNavLink.vue';
 
 export default {
     components: {
         AppLogo,
+        AppNavLink,
     },
     props: ['title'],
     data() {
         return {
             showingNavigationDropdown: false,
+            pages: {
+                About: '/',
+            },
         };
     },
     watch: {
