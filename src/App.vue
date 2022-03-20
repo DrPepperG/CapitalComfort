@@ -1,5 +1,16 @@
 <template>
-    <div class="h-full w-full">
+    <app-layout>
         <router-view />
-    </div>
+    </app-layout>
 </template>
+
+<script lang="ts">
+import { defineComponent } from "vue";
+import AppLayout from "@/layouts/AppLayout.vue";
+
+export default defineComponent({
+    components: {
+        AppLayout,
+    }
+});
+</script>

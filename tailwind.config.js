@@ -1,17 +1,15 @@
-const defaultTheme = require('tailwindcss/defaultTheme');
+/* eslint-disable @typescript-eslint/no-var-requires */
+const defaultTheme = require("tailwindcss/defaultTheme");
 
 module.exports = {
-    purge: {
-        mode: 'all',
-        content: ['./public/**/*.html', './src/**/*.vue'],
-    },
+    content: ["./public/**/*.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
 
     theme: {
         extend: {
             colors: {
                 'cc-black': {
                     lighter: '#474747',
-                    DEFAULT: '#363636',
+                    DEFAULT: '#171717',
                 },
                 'cc-blue': '#4273ff',
                 'cc-yellow': '#ffc600',
@@ -23,10 +21,8 @@ module.exports = {
     },
 
     variants: {
-        opacity: ['responsive', 'hover', 'focus', 'disabled'],
+        extend: {
+            opacity: ["responsive", "hover", "focus", "disabled"],
+        }
     },
-
-    plugins: [
-        //
-    ],
 };

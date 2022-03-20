@@ -38,11 +38,12 @@
     </div>
 </template>
 
-<script>
+<script lang="ts">
+import { defineComponent } from 'vue';
 import AppLogo from '@/components/AppLogo.vue';
 import AppNavLink from '@/components/AppNavLink.vue';
 
-export default {
+export default defineComponent({
     components: {
         AppLogo,
         AppNavLink,
@@ -64,5 +65,5 @@ export default {
             },
         },
     },
-};
+});
 </script>

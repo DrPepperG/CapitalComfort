@@ -1,17 +1,13 @@
 <template>
-    <app-layout>
-        <section>
-        </section>
-    </app-layout>
+    <div>
+        ddd
+    </div>
 </template>
 
-<script>
-import AppLayout from '@/layouts/AppLayout.vue';
+<script lang="ts">
+import { defineComponent } from "vue";
 
-export default {
+export default defineComponent({
     name: 'Home',
-    components: {
-        AppLayout,
-    },
-};
+});
 </script>

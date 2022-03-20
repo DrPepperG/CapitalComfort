@@ -3,9 +3,6 @@ import App from './App.vue';
 import router from './router';
 import './assets/tailwind.css';
 
-const el = document.getElementById('app');
-el.classList.add('h-full');
-
-createApp(App)
+createApp(App as object)
     .use(router)
-    .mount(el);
+    .mount('#app');
