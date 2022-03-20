@@ -1,6 +1,6 @@
 <template>
     <div :class="[maxWidthClass, posClass]">
-        <div :class="[height, color, 'overflow-hidden shadow-xl rounded-lg p-6']">
+        <div :class="[color, 'overflow-hidden shadow-xl rounded-lg p-6']" v-bind="$attrs">
             <div class="flex items-center justify-center border-b" v-if="showLogo">
                 <app-logo class="block h-14" />
                 <h1 class="text-4xl font-bold">Capital Comfort</h1>
@@ -10,17 +10,15 @@
     </div>
 </template>
 
-<script>
+<script lang="ts">
+import { defineComponent } from "vue";
 import AppLogo from './AppLogo.vue';
 
-export default {
+export default defineComponent({
     components: {
         AppLogo,
     },
     props: {
-        height: {
-            type: String,
-        },
         maxWidth: {
             type: String,
             default: '2xl',
@@ -49,5 +47,5 @@ export default {
             }[this.maxWidth];
         },
     },
-};
+});
 </script>
