@@ -1,0 +1,31 @@
+@tailwind base;
+
+@layer base {
+    .no-base {
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-size: revert;
+            font-weight: revert;
+        }
+
+        ol,
+        ul {
+            list-style: revert;
+            margin: revert;
+            padding: revert;
+        }
+
+        blockquote {
+            border-left: 2px solid #30363d;
+            padding-left: 1em;
+        }
+    }
+}
+
+@tailwind components;
+@tailwind utilities;

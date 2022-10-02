@@ -18,17 +18,26 @@ const page = await getItems(
 // If cms returns no page then redirect home
 if (!page) clearError({ redirect: '/' })
 
+// Create components for use
 let components = []
 page.sections.forEach((section) => {
+    // Get rid of id since it will be appended to DOM
     delete section.item.id
+    const collection = section.collection
 
+    // Make sure we have values from the cms
+    if (!collection || !section.item) return
+    
     components.push({ 
-        component: `Lazy${section.collection.charAt(0).toUpperCase() + section.collection.slice(1)}`,
+        component: `Lazy${collection.charAt(0).toUpperCase() + collection.slice(1)}`,
         props: section.item
     })
 })
 
-console.log(components)
+// Setup header with data from cms
+useHead({
+    title: page.title
+})
 </script>
 
 <template>
@@ -44,11 +53,15 @@ console.log(components)
         LazyBanner,
         LazyHero
     } from '#components'
+import { use } from 'h3';
 
     export default {
         components: {
             LazyBanner,
             LazyHero
+        }, 
+        mounted() {
+            console.log('test')
         }
     }
 </script>
