@@ -53,15 +53,11 @@ useHead({
         LazyBanner,
         LazyHero
     } from '#components'
-import { use } from 'h3';
 
     export default {
         components: {
             LazyBanner,
             LazyHero
         }, 
-        mounted() {
-            console.log('test')
-        }
     }
 </script>
