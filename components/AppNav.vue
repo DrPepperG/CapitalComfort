@@ -1,8 +1,6 @@
 <script setup lang="ts">
-    import { Settings } from '~~/app.vue';
     const { getThumbnail: img } = useDirectusFiles();
 
-    const settings: Settings = inject('settings')
     let showingNavigationDropdown = false
 </script>
 
@@ -14,9 +12,9 @@
                 <!-- Logo -->
                 <NuxtLink to="/">
                     <div class="flex flex-row items-center">
-                        <img :src="img(settings.site_logo, { height: 50, width: 50 })" />
+                        <img :src="img($settings.site_logo, { height: 50, width: 50 })" />
                         <span class="text-white font-bold uppercase text-xl ml-2">
-                            {{ settings.site_name }}
+                            {{ $settings.site_name }}
                         </span>
                     </div>
                 </NuxtLink>
@@ -57,8 +55,8 @@
                         <h2 class="text-white font-bold text-2xl uppercase">
                             Call or Text:
                         </h2>
-                        <a class="text-cc-yellow font-bold text-2xl" :href="`tel:${settings.site_phone_number}`">
-                            {{ settings.site_phone_number }}
+                        <a class="text-cc-yellow font-bold text-2xl" :href="`tel:${$settings.site_phone_number}`">
+                            {{ $settings.site_phone_number }}
                         </a>
                     </div>
                 </div>
@@ -66,12 +64,12 @@
         </div>
 
         <!-- Navigation -->
-        <div class="bg-cc-black-lighter" v-if="settings.site_nav_links">
+        <div class="bg-cc-black-lighter" v-if="$settings.site_nav_links">
             <div class="flex items-center h-full mx-auto max-w-7xl sm:px-3 lg:px-6">
                 <!-- Nav Element -->
                 <NuxtLink 
                     :to="link.url"
-                    v-for="link in settings.site_nav_links"
+                    v-for="link in $settings.site_nav_links"
                     :key="link.text"
                 >
                     <div class="p-3 px-5 mx-3 first:ml-0 hover:bg-cc-blue hover:cursor-pointer hover:scale-105">
@@ -91,13 +89,13 @@
             <h2 class="text-white font-bold text-2xl uppercase">
                 Call or Text:
             </h2>
-            <a class="text-cc-yellow font-bold text-2xl" :href="`tel:${settings.site_phone_number}`">
-                {{ settings.site_phone_number }}
+            <a class="text-cc-yellow font-bold text-2xl" :href="`tel:${$settings.site_phone_number}`">
+                {{ $settings.site_phone_number }}
             </a>
         </div>
 
-        <AppAlert v-if="settings.site_alert">
-            <span v-html="settings.site_alert" />
+        <AppAlert v-if="$settings.site_alert">
+            <span v-html="$settings.site_alert" />
         </AppAlert>
 
         <!-- Slot -->

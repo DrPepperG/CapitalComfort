@@ -1,6 +1,6 @@
 <template>
     <main class="bg-[#0d0d0d] h-screen">
-        <app-nav />
+        <AppNav />
         <slot />
     </main>
 </template>

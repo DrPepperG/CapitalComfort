@@ -21,7 +21,9 @@ const page = await getItems(
     });
 
 // If cms returns no page then redirect home
-if (!page) clearError({ redirect: '/' })
+if (!page) {
+    throw createError({ statusCode: 404, statusMessage: 'Page Not Found' })
+}
 
 // Create components for use
 let components: PageComponent[] = []
