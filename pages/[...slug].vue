@@ -1,4 +1,9 @@
 <script setup lang="ts">
+interface PageComponent {
+    component: String,
+    props: Array<any>
+}
+
 const { getItems } = useDirectusItems();
 const route = useRoute();
 
@@ -19,7 +24,7 @@ const page = await getItems(
 if (!page) clearError({ redirect: '/' })
 
 // Create components for use
-let components = []
+let components: PageComponent[] = []
 page.sections.forEach((section) => {
     // Get rid of id since it will be appended to DOM
     delete section.item.id
@@ -42,8 +47,6 @@ useHead({
 
 <template>
     <div>
-        <NuxtLink to="/test">Test</NuxtLink>
-        <NuxtLink to="/">Test2</NuxtLink>
         <component :is="item.component" v-bind="item.props" v-for="item in components"/>
     </div>
 </template>
