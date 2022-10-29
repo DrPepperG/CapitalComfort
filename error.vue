@@ -1,9 +1,11 @@
 <script setup lang="ts">
-    defineProps(['error'])
+    const error = defineProps(['error'])
 </script>
 
 <template>
-    <div>
-        {{ error.url }}
-    </div>
+    <NuxtLayout>
+        <div class="text-white">
+            {{ error }}
+        </div>
+    </NuxtLayout>
 </template>

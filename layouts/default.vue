@@ -1,6 +1,7 @@
 <template>
-    <main class="bg-[#0d0d0d] h-screen">
+    <main class="flex flex-col bg-[#cecece] h-screen">
         <AppNav />
         <slot />
+        <AppFooter />
     </main>
 </template>

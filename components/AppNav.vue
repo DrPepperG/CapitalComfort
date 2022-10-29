@@ -1,7 +1,5 @@
 <script setup lang="ts">
-    const { getThumbnail: img } = useDirectusFiles();
-
-    let showingNavigationDropdown = false
+    let showingNavigationDropdown = ref(false)
 </script>
 
 <template>
@@ -10,14 +8,7 @@
         <div class="bg-cc-black p-3">
             <div class="flex items-center h-full px-1 mx-auto max-w-7xl sm:px-3 lg:px-6 relative">
                 <!-- Logo -->
-                <NuxtLink to="/">
-                    <div class="flex flex-row items-center">
-                        <img :src="img($settings.site_logo, { height: 50, width: 50 })" />
-                        <span class="text-white font-bold uppercase text-xl ml-2">
-                            {{ $settings.site_name }}
-                        </span>
-                    </div>
-                </NuxtLink>
+                <AppLogo />
 
                 <!-- Mobile Hamburger -->
                 <div class="ml-auto flex items-center md:hidden" >
