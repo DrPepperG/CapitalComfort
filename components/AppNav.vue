@@ -3,6 +3,12 @@
 </script>
 
 <template>
+    <div>
+        <AppAlert :color="$settings.site_alert_color" v-if="$settings.site_alert">
+            <span v-html="$settings.site_alert" />
+        </AppAlert>
+    </div>
+
     <nav>
         <!-- Brand Topper -->
         <div class="bg-cc-black p-3">
@@ -62,6 +68,7 @@
                     :to="link.url"
                     v-for="link in $settings.site_nav_links"
                     :key="link.text"
+                    :target="link.new_tab ? '_blank' : null"
                 >
                     <div class="p-3 px-5 mx-3 first:ml-0 hover:bg-cc-blue hover:cursor-pointer hover:scale-105">
                         <div class="text-white font-semibold uppercase">
@@ -84,10 +91,6 @@
                 {{ $settings.site_phone_number }}
             </a>
         </div>
-
-        <AppAlert v-if="$settings.site_alert">
-            <span v-html="$settings.site_alert" />
-        </AppAlert>
 
         <!-- Slot -->
         <slot />
