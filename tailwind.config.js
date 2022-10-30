@@ -9,6 +9,9 @@ module.exports = {
           lighter: '#1a1a1a',
           DEFAULT: '#101010',
         },
+        'cc-white': {
+          DEFAULT: '#cecece',
+        },
         'cc-blue': '#4172ff',
         'cc-yellow': '#ffc600',
       }

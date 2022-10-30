@@ -7,7 +7,7 @@
             <h2 class="text-5xl font-extrabold text-white">
                 <span class="text-cc-yellow">heating</span> and <span class="text-cc-blue">cooling</span>
             </h2>
-            <h1 class="text-6xl font-extrabold text-white">
+            <h1 class=" text-6xl font-extrabold text-white">
                 specalists
             </h1>
         </div>

@@ -3,8 +3,8 @@
 </script>
 
 <template>
-    <div>
-        <AppAlert :color="$settings.site_alert_color" v-if="$settings.site_alert">
+    <div v-if="$settings.site_alert">
+        <AppAlert :color="$settings.site_alert_color">
             <span v-html="$settings.site_alert" />
         </AppAlert>
     </div>

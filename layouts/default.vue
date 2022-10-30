@@ -1,5 +1,5 @@
 <template>
-    <main class="flex flex-col bg-[#cecece] h-screen">
+    <main class="flex flex-col bg-cc-white h-screen">
         <AppNav />
         <slot />
         <AppFooter />
