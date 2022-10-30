@@ -3,7 +3,7 @@
 </script>
 
 <template>
-    <NuxtLink to="/">
+    <NuxtLink to="/" v-bind="$attrs">
         <div class="flex flex-row items-center">
             <img :src="img($settings.site_logo, { height: 50, width: 50 })" />
             <span class="text-white font-bold uppercase text-xl ml-2">

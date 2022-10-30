@@ -1,5 +1,5 @@
 <script setup lang="ts">
-    let showingNavigationDropdown = ref(false)
+    let showingNavigation = ref(false)
 </script>
 
 <template>
@@ -22,18 +22,18 @@
                         class="inline-flex items-center justify-center p-2 rounded-md text-white
                         hover:text-gray-400 hover:bg-asoc-black-lighter focus:outline-none focus:bg-asoc-black-lighter
                         focus-within:focus:text-gray-500 transition duration-150 ease-in-out"
-                        @click="showingNavigationDropdown = ! showingNavigationDropdown"
+                        @click="showingNavigation = ! showingNavigation"
                     >
                         <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
                             <path 
-                                :class="{ 'hidden': showingNavigationDropdown, 'inline-flex': ! showingNavigationDropdown }"
+                                :class="{ 'hidden': showingNavigation, 'inline-flex': ! showingNavigation }"
                                 stroke-linecap="round"
                                 stroke-linejoin="round"
                                 stroke-width="2"
                                 d="M4 6h16M4 12h16M4 18h16" 
                             />
                             <path
-                                :class="{ 'hidden': ! showingNavigationDropdown, 'inline-flex': showingNavigationDropdown }"
+                                :class="{ 'hidden': ! showingNavigation, 'inline-flex': showingNavigation }"
                                 stroke-linecap="round"
                                 stroke-linejoin="round"
                                 stroke-width="2"
@@ -61,8 +61,12 @@
         </div>
 
         <!-- Navigation -->
-        <div class="bg-cc-black-lighter" v-if="$settings.site_nav_links">
-            <div class="flex items-center h-full mx-auto max-w-7xl sm:px-3 lg:px-6">
+        <div 
+            class="bg-cc-black-lighter md:block"
+            :class="[showingNavigation ? 'block' : 'hidden']"
+            v-if="$settings.site_nav_links"
+        >
+            <div class="flex flex-col md:flex-row mx-auto max-w-7xl text-center lg:px-6">
                 <!-- Nav Element -->
                 <NuxtLink 
                     :to="link.url"
@@ -70,7 +74,7 @@
                     :key="link.text"
                     :target="link.new_tab ? '_blank' : null"
                 >
-                    <div class="p-3 px-5 mx-3 first:ml-0 hover:bg-cc-blue hover:cursor-pointer hover:scale-105">
+                    <div class="p-3 px-5 md:mx-3 first:ml-0 hover:bg-cc-blue hover:cursor-pointer md:hover:scale-105">
                         <div class="text-white font-semibold uppercase">
                             {{ link.text }}
                         </div>

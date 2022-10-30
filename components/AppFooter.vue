@@ -2,7 +2,7 @@
     <footer class="mt-auto bg-cc-black text-white py-8 px-16 space-y-4">
         <div class="flex flex-col lg:flex-row gap-4">
             <!-- Logo -->
-            <AppLogo />
+            <AppLogo class="md:mr-12" />
             <div class="grid grid-cols-1 sm:grid-cols-2 2xl:grid-cols-4 items-start gap-8">
                 <div
                     v-for="category in $settings.site_footer_links"
@@ -11,10 +11,20 @@
                     <span class="text-xl font-bold uppercase">{{ category.category_title }}</span>
                     <ul class="mt-2">
                         <li
-                            class="font-semibold"
+                            class="font-semibold text-gray-300"
                             v-for="link in category.category_links"
                         >
-                            {{ link.text }}
+                            <NuxtLink
+                                :to="link.link"
+                                :target="link.new_tab ? '_blank' : null"
+                                v-if="link.is_link"
+                            >
+                                {{ link.text }}
+                            </NuxtLink>
+
+                            <span v-else>
+                                {{ link.text }}
+                            </span>
                         </li>
                     </ul>
                 </div>
