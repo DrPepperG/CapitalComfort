@@ -12,6 +12,7 @@
     "nuxt": "^3.0.0-rc.12"
   },
   "dependencies": {
-    "nuxt-directus": "^3.0.3"
+    "nuxt-directus": "^3.0.3",
+    "vue-tabler-icons": "^2.16.0"
   }
 }

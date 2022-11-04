@@ -4,7 +4,7 @@
     const props = defineProps({
         color: {
             type: String,
-            default: 'white'
+            default: 'black'
         }
     })
 
@@ -12,9 +12,11 @@
 </script>
 
 <template>
-    <div :class="[color, 'p-6']" v-bind="$attrs">
-        <div class="mx-auto container">
-            <slot />
-        </div>
+    <div
+        class="rounded-lg p-6 m-6"
+        :class="color"
+        v-bind="$attrs"
+    >
+        <slot />
     </div>
 </template>
