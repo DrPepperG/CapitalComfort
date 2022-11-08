@@ -1,4 +1,6 @@
 <script setup lang="ts">
+    import { colors } from '~~/composables/colors';
+
     const props = defineProps({
         color: {
             type: String,
@@ -6,10 +8,7 @@
         }
     })
 
-    const color = {
-        red: 'bg-red-500 text-white',
-        blue: 'bg-cc-blue text-white'
-    }[props.color]
+    const color = colors[props.color]
 </script>
 
 <template>

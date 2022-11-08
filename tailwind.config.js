@@ -13,7 +13,7 @@ module.exports = {
           DEFAULT: '#cecece',
         },
         'cc-blue': '#4172ff',
-        'cc-yellow': '#ffc600',
+        'cc-orange': '#F57316',
       }
     },
   },
