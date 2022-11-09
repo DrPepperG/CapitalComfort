@@ -1,30 +1,33 @@
 <template>
     <div>
         <section>
-            <AppHero class="md:pt-20 pb-20" color="black">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div class="text-center italic uppercase">
-                        <h1 class="text-6xl font-extrabold text-white">
-                            Your
-                        </h1>
-                        <h2 class="text-5xl font-extrabold text-white">
-                            <span class="text-cc-orange">heating</span> and <span class="text-cc-blue">cooling</span>
-                        </h2>
-                        <h1 class=" text-6xl font-extrabold text-white">
-                            specalists
-                        </h1>
+            <AppHero class="py-10" color="black">
+                <div class="grid grid-cols-1 lg:grid-cols-2 items-center gap-4">
+                    <div class="text-center lg:text-left">
+                        <div class="italic uppercase">
+                            <h1 class="text-5xl lg:text-6xl font-extrabold text-white">
+                                Your
+                            </h1>
+                            <h2 class="text-4xl lg:text-5xl font-extrabold text-white">
+                                <span class="text-cc-orange">heating</span> & <span class="text-cc-blue">cooling</span>
+                            </h2>
+                            <h1 class="text-5xl lg:text-6xl font-extrabold text-white">
+                                specialists
+                            </h1>
+                        </div>
+                        <div class="mt-4">
+                            <p class="text-xl font-semibold">
+                                Providing service to The Triangle and surrounding areas since 2008,
+                                Capital Comfort is a family owned/operated business that strives to deliver the best quality service and workmanship.
+                                Let us be your HVAC company of choice today!
+                            </p>
+                        </div>
                     </div>
-                    <div class="col-span-2 mx-auto text-center mt-8">
-                        <h1 class="text-5xl font-semibold z-20">
-                            Serving
-                            
-                            <span class="relative">
-                                <span class="text-white z-20">
-                                    The Triangle
-                                </span>
-                            </span>
-                            and surrounding areas
-                        </h1>
+                    <div>
+                        <img
+                            class="rounded-xl"
+                            src="https://i.imgur.com/yH7biJ2.jpeg" 
+                        />
                     </div>
                 </div>
             </AppHero>

@@ -44,7 +44,7 @@
                 </div>
 
                 <!-- Blue Corner Desktop -->
-                <div class="hidden md:block absolute bg-cc-orange rounded-br-xl rounded-bl-xl p-5 -top-3 right-0">
+                <div class="hidden md:block absolute bg-cc-orange rounded-b-xl p-5 -top-3 right-0">
                     <div class="text-white text-center">
                         <h1 class="text-white font-bold text-2xl uppercase">
                             Schedule a visit
@@ -52,7 +52,7 @@
                         <h2 class="text-white font-bold text-2xl uppercase">
                             Call or Text:
                         </h2>
-                        <a class="text-cc-blue font-bold text-2xl" :href="`tel:${$settings.site_phone_number}`">
+                        <a class="bg-cc-blue rounded-lg px-2 font-bold text-2xl" :href="`tel:${$settings.site_phone_number}`">
                             {{ $settings.site_phone_number }}
                         </a>
                     </div>
@@ -91,7 +91,10 @@
             <h2 class="text-white font-bold text-2xl uppercase">
                 Call or Text:
             </h2>
-            <a class="text-cc-blue font-bold text-2xl" :href="`tel:${$settings.site_phone_number}`">
+            <a 
+                class="bg-cc-blue rounded-t-xl px-2 font-bold text-2xl"
+                :href="`tel:${$settings.site_phone_number}`"
+            >
                 {{ $settings.site_phone_number }}
             </a>
         </div>
