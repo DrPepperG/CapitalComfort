@@ -13,9 +13,8 @@
 
 <template>
     <div
-        class="rounded-lg p-6 m-6"
+        class="rounded-lg p-6"
         :class="color"
-        v-bind="$attrs"
     >
         <slot />
     </div>

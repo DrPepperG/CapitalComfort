@@ -12,7 +12,7 @@
 </script>
 
 <template>
-    <div :class="[color, 'p-6']" v-bind="$attrs">
+    <div :class="[color, 'py-10']">
         <div class="mx-auto container">
             <slot />
         </div>

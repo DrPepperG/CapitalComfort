@@ -1,8 +1,20 @@
+<script setup lang="ts">
+    import { GaugeIcon } from 'vue-tabler-icons';
+
+    const services = [
+        {
+            icon: GaugeIcon,
+            title: 'HVAC Service',
+            description: "<ul><li>tdd</li></ul>",
+        }
+    ]
+</script>
+
 <template>
     <div>
         <section>
-            <AppHero class="py-10" color="black">
-                <div class="grid grid-cols-1 lg:grid-cols-2 items-center gap-4">
+            <AppHero color="black">
+                <div class="grid grid-cols-1 lg:grid-cols-2 items-center gap-4 p-6">
                     <div class="text-center lg:text-left">
                         <div class="italic uppercase">
                             <h1 class="text-5xl lg:text-6xl font-extrabold text-white">
@@ -33,11 +45,19 @@
             </AppHero>
         </section>
         <section>
-            <div class="mx-auto container">
-
-                <AppSegment>
-                    Test
-                </AppSegment>
+            <div class="mx-auto container p-6">
+                <h1 class="text-6xl font-bold text-left uppercase mb-4">
+                    Services
+                </h1>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+                    <AppCard v-for="service in services">
+                        <component class="mx-auto" :is="service.icon" size="48" />
+                        <h1 class="text-2xl font-bold text-center">
+                            {{ service.title }}
+                        </h1>
+                        <div class="prose prose-invert" v-html="service.description" />
+                    </AppCard>
+                </div>
             </div>
         </section>
     </div>
