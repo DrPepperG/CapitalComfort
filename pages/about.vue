@@ -42,7 +42,7 @@
     <section>
         <AppSection class="mb-4">
             <template #title>
-                Our Staff
+                Our Team
             </template>
             <div class="flex flex-row gap-4 flex-wrap">
                 <AppCard class="w-80 text-center" v-for="employee in employees">
