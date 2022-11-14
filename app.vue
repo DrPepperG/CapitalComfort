@@ -5,7 +5,7 @@
     useHead({
         titleTemplate: (title) => { return title ? `${title} | ${$settings.site_name}` : `${$settings.site_name}` },
         link: [
-            { rel: 'icon', type: 'image/png', href: img($settings.site_logo, { format: 'png' }) }
+            { rel: 'icon', type: 'image/png', href: img($settings.site_favicon, { format: 'png' }) }
         ]
     })
 </script>

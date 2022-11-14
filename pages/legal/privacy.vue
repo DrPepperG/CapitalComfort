@@ -1,3 +1,9 @@
+<script setup lang="ts">
+    useHead({
+        title: 'Privacy Policy'
+    })
+</script>
+
 <template>
     <section>
         <div class="mx-auto container mt-4">
