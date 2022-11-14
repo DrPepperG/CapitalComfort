@@ -5,7 +5,7 @@
 <template>
     <div v-if="$settings.site_alert">
         <AppAlert :color="$settings.site_alert_color">
-            <span v-html="$settings.site_alert" />
+            <span class="prose prose-invert" v-html="$settings.site_alert" />
         </AppAlert>
     </div>
 

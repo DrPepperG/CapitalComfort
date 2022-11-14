@@ -1,13 +1,20 @@
 <script setup lang="ts">
-    import { GaugeIcon } from 'vue-tabler-icons';
+    const { getThumbnail: img } = useDirectusFiles();
+    const { getSingletonItem } = useDirectusItems();
 
-    const services = [
-        {
-            icon: GaugeIcon,
-            title: 'HVAC Service',
-            description: "<ul><li>tdd</li></ul>",
-        }
-    ]
+    interface IndexSettings {
+        hero_paragraph: string,
+        hero_image: string,
+        services_list: Array<{
+            icon: string,
+            title: string,
+            description: string
+        }>
+    }
+
+    const settings: IndexSettings = await getSingletonItem<IndexSettings>({
+        collection: 'index_settings'
+    })
 </script>
 
 <template>
@@ -29,35 +36,39 @@
                         </div>
                         <div class="mt-4">
                             <p class="text-xl font-semibold">
-                                Providing service to The Triangle and surrounding areas since 2008,
-                                Capital Comfort is a family owned/operated business that strives to deliver the best quality service and workmanship.
-                                Let us be your HVAC company of choice today!
+                                {{ settings.hero_paragraph }}
                             </p>
                         </div>
                     </div>
                     <div>
-                        <img
-                            class="rounded-xl"
-                            src="https://i.imgur.com/yH7biJ2.jpeg" 
-                        />
+                        <img class="rounded-xl" :src="img(settings.hero_image)" />
                     </div>
                 </div>
             </AppHero>
         </section>
         <section>
             <div class="mx-auto container p-6">
-                <h1 class="text-6xl font-bold text-left uppercase mb-4">
+                <h1 class="text-6xl font-bold text-left uppercase">
                     Services
                 </h1>
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
-                    <AppCard v-for="service in services">
-                        <component class="mx-auto" :is="service.icon" size="48" />
+                <h2 class="font-semibold italic text-gray-700 mb-2">
+                    We do work for homeowners, contractors, landlords and more.
+                </h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                    <AppCard v-for="service in settings.services_list">
+                        <div class="mx-auto" v-html="service.icon" />
                         <h1 class="text-2xl font-bold text-center">
                             {{ service.title }}
                         </h1>
-                        <div class="prose prose-invert" v-html="service.description" />
+                        <div 
+                            class="border-t-2 border-gray-500 prose prose-invert" 
+                            v-html="service.description" 
+                        />
                     </AppCard>
                 </div>
+                <h2 class="text-2xl font-semibold italic text-gray-700 my-2">
+                    Unsure if we offer a certain service? Contact us today!
+                </h2>
             </div>
         </section>
     </div>

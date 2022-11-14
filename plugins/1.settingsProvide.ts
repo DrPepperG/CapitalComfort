@@ -10,6 +10,7 @@ export interface Settings {
     site_alert_color: string,
 
     site_description: string,
+    site_favicon: string,
 
     site_nav_links: Array<{
         text: string,
