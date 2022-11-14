@@ -1,19 +1,25 @@
 <script setup lang="ts">
     const { getThumbnail: img } = useDirectusFiles();
-    const { getItems } = useDirectusItems();
+    const { getSingletonItem, getItems } = useDirectusItems();
     type Employee = {
         first_name: string,
         last_name: string,
         image: string,
         position: string
     }
+    interface AboutSettings {
+        about_description: string,
+    }
 
     useHead({
         title: 'About'
     })
 
+    const settings: AboutSettings = await getSingletonItem<AboutSettings>({
+        collection: 'about_settings',
+    })
     const employees: Employee[] = await getItems<Employee[]>({
-        collection: 'employees'
+        collection: 'employees',
     })
 </script>
 
@@ -23,11 +29,8 @@
             <template #title>
                 About Us
             </template>
-            <AppSegment>
-                <p>
-                    Capital Comfort is a locally owned and operated business founded in 2008 by Thomas Crain,
-                    providing quality craftmanship and services to all surrounding areas of The Triangle.
-                </p>
+            <AppSegment class="max-w-4xl">
+                <div class="prose prose-invert prose-lg min-w-full" v-html="settings.about_description" />
             </AppSegment>
         </AppSection>
     </section>
