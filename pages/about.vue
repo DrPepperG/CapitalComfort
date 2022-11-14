@@ -25,27 +25,19 @@
             </template>
             <AppSegment>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Convallis convallis tellus id interdum velit laoreet. Ut enim blandit volutpat maecenas. Venenatis urna
-                    cursus
-                    eget nunc scelerisque. Massa tincidunt nunc pulvinar sapien et ligula ullamcorper malesuada. Blandit massa enim nec
-                    dui
-                    nunc mattis. Massa tempor nec feugiat nisl pretium fusce id. Ut eu sem integer vitae. Eget mi proin sed libero enim
-                    sed
-                    faucibus turpis in. Nulla porttitor massa id neque aliquam vestibulum morbi blandit cursus. Maecenas ultricies mi
-                    eget
-                    mauris pharetra et ultrices neque ornare. Magna eget est lorem ipsum dolor sit amet consectetur adipiscing.
+                    Capital Comfort is a locally owned and operated business founded in 2008 by Thomas Crain,
+                    providing quality craftmanship and services to all surrounding areas of The Triangle.
                 </p>
             </AppSegment>
         </AppSection>
     </section>
     <section>
-        <AppSection class="mb-4">
+        <AppSection>
             <template #title>
                 Our Team
             </template>
             <div class="flex flex-row gap-4 flex-wrap">
-                <AppCard class="w-80 text-center" v-for="employee in employees">
+                <AppCard class="w-full md:w-80 text-center" v-for="employee in employees">
                     <img class="rounded-full w-40 h-40 mx-auto" :src="img(employee.image)" />
                     <h1 class="text-2xl font-bold">
                         {{ employee.first_name }} {{ employee.last_name }}

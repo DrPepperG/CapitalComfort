@@ -6,7 +6,7 @@
 
 <template>
     <section>
-        <div class="mx-auto container mt-4">
+        <div class="mx-auto container p-6">
             <AppSegment>
                 <h1 class="text-4xl font-bold text-left uppercase">Privacy Policy</h1>
                 <h2 class="font-bold">Effective 11/13/2022</h2>

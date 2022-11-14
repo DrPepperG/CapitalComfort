@@ -1,5 +1,5 @@
 <template>
-    <div class="mx-auto container mt-4">
+    <div class="mx-auto container mt-4 p-6">
         <h1 class="text-6xl font-bold text-left uppercase mb-2">
             <slot name="title" />
         </h1>

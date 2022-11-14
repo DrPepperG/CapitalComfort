@@ -12,7 +12,7 @@
 </script>
 
 <template>
-    <div :class="[color, 'lg:py-10']">
+    <div :class="[color, 'lg:py-10 p-6']">
         <div class="mx-auto container">
             <slot />
         </div>

@@ -21,7 +21,7 @@
     <div>
         <section>
             <AppHero color="black">
-                <div class="grid grid-cols-1 lg:grid-cols-2 items-center gap-4 p-6">
+                <div class="grid grid-cols-1 lg:grid-cols-2 items-center gap-4">
                     <div class="text-center lg:text-left">
                         <div class="italic uppercase">
                             <h1 class="text-5xl lg:text-6xl font-extrabold text-white">
@@ -47,7 +47,7 @@
             </AppHero>
         </section>
         <section>
-            <AppSection class="p-6">
+            <AppSection>
                 <template #title>Services</template>
                 <template #description>
                     We do work for homeowners, contractors, landlords and more.
