@@ -11,6 +11,7 @@ export interface Settings {
 
     site_description: string,
     site_favicon: string,
+    site_keywords: string[],
 
     site_nav_links: Array<{
         text: string,
@@ -27,7 +28,6 @@ export interface Settings {
         }>
     }>
 
-    date_created: Date,
     date_updated: Date,
 }
 

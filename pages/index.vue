@@ -47,29 +47,24 @@
             </AppHero>
         </section>
         <section>
-            <div class="mx-auto container p-6">
-                <h1 class="text-6xl font-bold text-left uppercase">
-                    Services
-                </h1>
-                <h2 class="font-semibold italic text-gray-700 mb-2">
+            <AppSection class="p-6">
+                <template #title>Services</template>
+                <template #description>
                     We do work for homeowners, contractors, landlords and more.
-                </h2>
+                </template>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                     <AppCard v-for="service in settings.services_list">
                         <div class="mx-auto" v-html="service.icon" />
                         <h1 class="text-2xl font-bold text-center">
                             {{ service.title }}
                         </h1>
-                        <div 
-                            class="border-t-2 border-gray-500 prose prose-invert" 
-                            v-html="service.description" 
-                        />
+                        <div class="border-t-2 border-gray-500 prose prose-invert" v-html="service.description" />
                     </AppCard>
                 </div>
                 <h2 class="text-2xl font-semibold italic text-gray-700 my-2">
                     Unsure if we offer a certain service? Contact us today!
                 </h2>
-            </div>
+            </AppSection>
         </section>
     </div>
 </template>
