@@ -12,6 +12,7 @@ export interface Settings {
     site_description: string,
     site_favicon: string,
     site_keywords: string[],
+    site_image: string,
 
     site_nav_links: Array<{
         text: string,
