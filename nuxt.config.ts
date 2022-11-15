@@ -2,6 +2,6 @@
 export default defineNuxtConfig({
     modules: ['nuxt-directus', '@nuxtjs/tailwindcss'],
     directus: {
-        url: 'http://localhost:8055/'
+        url: 'https://cms.capitalcomfort.net/'
     }
 })
