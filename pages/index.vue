@@ -41,7 +41,7 @@
                         </div>
                     </div>
                     <div>
-                        <img class="rounded-xl" :src="img(settings.hero_image)" />
+                        <img class="rounded-xl" :src="img(settings.hero_image, { format: 'webp' })" />
                     </div>
                 </div>
             </AppHero>
