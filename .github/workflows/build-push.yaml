@@ -28,6 +28,6 @@ jobs:
           file: ./Dockerfile
           builder: ${{ steps.buildx.outputs.name }}
           push: true
-          tags: '${{ secrets.REGISTRY_URL }}/site:latest'
-          cache-from: 'type=registry,ref=${{ secrets.REGISTRY_URL }}/site:buildcache'
-          cache-to: 'type=registry,ref=${{ secrets.REGISTRY_URL }}/site:buildcache,mode=max'
+          tags: '${{ secrets.REGISTRY_URL }}/capitalcomfort:latest'
+          cache-from: 'type=registry,ref=${{ secrets.REGISTRY_URL }}/capitalcomfort:buildcache'
+          cache-to: 'type=registry,ref=${{ secrets.REGISTRY_URL }}/capitalcomfort:buildcache,mode=max'
