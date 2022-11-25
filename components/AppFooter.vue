@@ -33,7 +33,7 @@
             <div class="flex flex-col lg:flex-row gap-4">
                 <!-- Logo -->
                 <AppLogo class="md:mr-4" size="lg" />
-                <div class="grid grid-cols-1 sm:grid-cols-2 2xl:grid-cols-4 items-start gap-8">
+                <div class="flex flex-col sm:flex-row flex-wrap gap-4">
                     <div
                         v-for="category in $settings.site_footer_links"
                         :key="category.category_title"
