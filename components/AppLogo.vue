@@ -9,10 +9,11 @@
     })
 
     const size = {
-        sm: 'h-10',
-        md: 'h-20',
-        lg: 'h-24',
-        xl: 'h-30'
+        xs: 'h-10',
+        sm: 'h-20',
+        md: 'h-24',
+        lg: 'h-28',
+        xl: 'h-32'
     }[props.size]
 </script>
 
