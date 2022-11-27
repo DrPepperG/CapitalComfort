@@ -1,5 +1,5 @@
 <template>
-    <footer class="mt-auto bg-cc-black text-white py-8 px-16 space-y-4">
+    <footer class="mt-auto bg-cc-black text-white py-10 px-6 lg:px-24 space-y-4">
         <div class="flex flex-col lg:flex-row gap-4">
             <!-- Logo -->
             <AppLogo class="md:mr-4" size="lg" />
