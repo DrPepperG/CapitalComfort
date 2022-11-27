@@ -60,7 +60,7 @@
                     </div>
                 </div>
             </div>
-            <div class="container border-t-2 border-white">
+            <div class="border-t-2 border-white">
                 <div class="flex flex-col mt-4">
                     <span class="font-semibold">NC License #20269</span>
                     <span class="font-bold">Copyright &copy; {{ new Date().getFullYear() }} {{ $settings.site_name }}</span>
