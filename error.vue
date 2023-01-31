@@ -4,7 +4,7 @@
 
 <template>
     <NuxtLayout>
-        <div class="m-auto">
+        <div class="m-auto p-6">
             <AppSegment>
                 <h1 class="text-6xl font-bold">
                     Error {{ error.statusCode }}
