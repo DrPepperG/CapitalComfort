@@ -42,12 +42,16 @@
             <div class="flex flex-row gap-4 flex-wrap">
                 <AppCard class="w-full md:w-80 text-center" v-for="employee in employees">
                     <img class="rounded-full w-40 h-40 mx-auto" :src="img(employee.image)" />
+
                     <h1 class="text-2xl font-bold">
                         {{ employee.first_name }} {{ employee.last_name }}
                     </h1>
-                    <h2 class="text-lg font-semibold">
-                        {{ employee.position }}
-                    </h2>
+
+                    <AppPill color="blue">
+                        <h2 class="text-lg font-semibold">
+                            {{ employee.position }}
+                        </h2>
+                    </AppPill>
                 </AppCard>
             </div>
         </AppSection>

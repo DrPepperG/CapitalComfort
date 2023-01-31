@@ -52,9 +52,9 @@
                         <h2 class="text-white font-bold text-2xl uppercase">
                             Call or Text:
                         </h2>
-                        <a class="bg-cc-blue rounded-lg px-2 font-bold text-2xl" :href="`tel:${$settings.site_phone_number}`">
+                        <AppPill color="blue" :href="`tel:${$settings.site_phone_number}`">
                             {{ $settings.site_phone_number }}
-                        </a>
+                        </AppPill>
                     </div>
                 </div>
             </div>
