@@ -6,6 +6,9 @@
 
     useHead({
         titleTemplate: (title) => { return title ? `${title} | ${$settings.site_name}` : `${$settings.site_name}` },
+        htmlAttrs: {
+            lang: 'en',
+        },
         meta: [
             { name: 'title', content: $settings.site_name },
             { name: 'description', content: $settings.site_description },
