@@ -5,16 +5,17 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "update-nuxt": "nuxi upgrade --force"
   },
   "devDependencies": {
-    "@nuxtjs/tailwindcss": "^6.1.2",
-    "nuxt": "^3.0.0",
+    "@nuxtjs/tailwindcss": "^6.6.7",
+    "nuxt": "^3.4.3",
     "vue-gtag-next": "^1.14.0"
   },
   "dependencies": {
     "@tailwindcss/typography": "^0.5.8",
-    "nuxt-directus": "^3.0.3",
+    "nuxt-directus": "^5.2.1",
     "vue-tabler-icons": "^2.16.0"
   }
 }
