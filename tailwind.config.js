@@ -12,7 +12,7 @@ module.exports = {
         'cc-white': {
           DEFAULT: '#cecece',
         },
-        'cc-blue': '#4172ff',
+        'cc-blue': '#1d63af',
         'cc-orange': '#f47216',
       }
     },
