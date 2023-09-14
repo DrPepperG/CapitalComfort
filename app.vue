@@ -13,6 +13,7 @@
             { name: 'title', content: $settings.site_name },
             { name: 'description', content: $settings.site_description },
             { name: 'keywords', content: keywords },
+            { name: 'theme-color', content: '#1d63af' },
 
             // Open Graph / Facebook
             { property: 'og:type', content: 'website' },
