@@ -18,7 +18,7 @@
     const settings: AboutSettings = await getSingletonItem<AboutSettings>({
         collection: 'about_settings',
     })
-    const employees: Employee[] = await getItems<Employee[]>({
+    const employees: Employee[] = await getItems<Employee>({
         collection: 'employees',
     })
 </script>
