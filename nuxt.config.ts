@@ -1,6 +1,15 @@
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
-    modules: ['nuxt-directus', 'nuxt-gtag', '@nuxtjs/tailwindcss'],
+    modules: [
+        '@nuxtjs/sitemap',
+        'nuxt-directus',
+        'nuxt-gtag',
+        'nuxt-simple-robots',
+        '@nuxtjs/tailwindcss'
+    ],
+    sitemap: {
+        autoLastmod: true
+    },
     directus: {
         url: 'https://cms.capitalcomfort.net/'
     },
