@@ -20,7 +20,7 @@
 <template>
     <NuxtLink to="/" v-bind="$attrs">
         <div class="flex flex-row items-center">
-            <img :class="size" :src="img($settings.site_logo, { format: 'webp'})" />
+            <NuxtImg :class="size" :src="img($settings.site_logo, { format: 'webp'})" />
         </div>
     </NuxtLink>
 </template>

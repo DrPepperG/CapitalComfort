@@ -10,6 +10,7 @@
     "update-nuxt": "nuxi upgrade --force"
   },
   "devDependencies": {
+    "@nuxt/image": "^1.7.0",
     "@nuxtjs/sitemap": "^5.1.1",
     "@nuxtjs/tailwindcss": "^6.8.0",
     "nuxt": "^3.10.1",

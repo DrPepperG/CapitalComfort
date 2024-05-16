@@ -14,6 +14,7 @@ module.exports = {
         },
         'cc-blue': '#1d63af',
         'cc-orange': '#f47216',
+        'cc-green': '#1ca551'
       }
     },
   },

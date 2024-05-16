@@ -10,6 +10,11 @@
             title: string,
             description: string
         }>
+        companies_list: Array<{
+            name: string,
+            logo: string,
+            link?: string
+        }>
     }
 
     const settings: IndexSettings = await getSingletonItem<IndexSettings>({
@@ -41,7 +46,7 @@
                         </div>
                     </div>
                     <div>
-                        <img class="rounded-xl" :src="img(settings.hero_image, { format: 'webp' })" />
+                        <NuxtImg class="rounded-xl" :src="img(settings.hero_image, { format: 'webp' })" />
                     </div>
                 </div>
             </AppHero>
@@ -64,6 +69,21 @@
                 <h2 class="text-2xl font-semibold italic text-gray-700 my-2">
                     Unsure if we offer a certain service? Contact us today!
                 </h2>
+            </AppSection>
+        </section>
+        <section>
+            <AppSection>
+                <template #title>Our Partners</template>
+                <template #description>
+                    We partner with knowledgeable companies to provide you with quality service!
+                </template>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                    <NuxtLink :to="company.link" target="_blank" v-for="company in settings.companies_list">
+                        <AppCard class="justify-center h-full" color="green">
+                            <NuxtImg :src="img(company.logo, { format: 'webp' })" />
+                        </AppCard>
+                    </NuxtLink>
+                </div>
             </AppSection>
         </section>
     </div>

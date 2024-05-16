@@ -5,7 +5,8 @@ export default defineNuxtConfig({
         'nuxt-directus',
         'nuxt-gtag',
         'nuxt-simple-robots',
-        '@nuxtjs/tailwindcss'
+        '@nuxtjs/tailwindcss',
+        "@nuxt/image"
     ],
     sitemap: {
         autoLastmod: true
