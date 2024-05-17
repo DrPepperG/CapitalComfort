@@ -80,7 +80,11 @@
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                     <NuxtLink :to="company.link" target="_blank" v-for="company in settings.companies_list">
                         <AppCard class="justify-center h-full" color="green">
-                            <NuxtImg :src="img(company.logo, { format: 'webp' })" :alt="company.name" />
+                            <NuxtImg
+                                class="mx-auto lg:w-full w-1/2"
+                                :src="img(company.logo, { format: 'webp' })"
+                                :alt="company.name" 
+                            />
                         </AppCard>
                     </NuxtLink>
                 </div>

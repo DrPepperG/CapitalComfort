@@ -30,7 +30,7 @@
                 About Us
             </template>
             <AppSegment class="max-w-4xl">
-                <div class="prose prose-invert prose-lg min-w-full" v-html="settings.about_description" />
+                <div class="prose prose-invert prose-lg text-white min-w-full" v-html="settings.about_description" />
             </AppSegment>
         </AppSection>
     </section>
