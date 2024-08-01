@@ -13,6 +13,8 @@ defineProps({
     }
 });
 
+const model = defineModel()
+
 const inputCss = "mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-cc-blue focus:ring focus:ring-cc-blue focus:ring-opacity-50";
 </script>
 
@@ -22,12 +24,14 @@ const inputCss = "mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:b
         <!-- Input -->
         <input 
             :class="[inputCss]"
+            v-model="model"
             v-bind="$attrs"
             v-if="inputType === 'input'"
         >
         <!-- Select -->
         <select
             :class="[inputCss]"
+            v-model="model"
             v-bind="$attrs"
             v-if="inputType === 'select'"
         >
@@ -36,6 +40,7 @@ const inputCss = "mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:b
         <!-- Textarea -->
         <textarea
             :class="[inputCss]"
+            v-model="model"
             v-bind="$attrs"
             v-if="inputType === 'textarea'"
         />

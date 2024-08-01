@@ -8,7 +8,7 @@ export default defineNuxtRouteMiddleware(() => {
 
 	if (!session.value) {
 		const newSession: Session = {
-			id: self.crypto.randomUUID(),
+			id: 'ddddd',
 			date_created: new Date().toISOString(),
 		};
 

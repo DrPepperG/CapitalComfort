@@ -7,7 +7,7 @@
         disableCTA: true
     });
 
-    const contactForm: {
+    type ContactForm = {
         forms: {
             id: string,
             title: string,
@@ -16,12 +16,13 @@
             inputType?: 'text' | 'password' | 'email' | 'number' | 'url' | 'date' | 'datetime-local' | 'month' | 'week' | 'time' | 'search' | 'tel' | 'checkbox' | 'radio',
             options?: {
                 value: string,
-                default?: boolean
             }[],
             fullWidth?: boolean,
             required?: boolean
         }[]
-    } = {
+    }
+
+    const contactForm: ContactForm = {
         forms: [
             {
                 id: 'first_name',
@@ -56,8 +57,7 @@
                 required: true,
                 options: [
                     {
-                        value: 'Maintenance List',
-                        default: true
+                        value: 'Maintenance List'
                     },
                     {
                         value: 'General Question'
@@ -71,11 +71,16 @@
                 required: true,
                 fullWidth: true
             },
-        ]
+        ],
     };
+
+    const formData: any = ref({
+        reason: 'Maintenance List'
+    })
 </script>
 
 <template>
+    {{ formData }}
     <section>
         <AppSection>
             <template #title>
@@ -92,6 +97,7 @@
                                 :type="input.inputType"
                                 :placeholder="input.placeholder"
                                 :required="input.required"
+                                v-model="formData[input.id]"
                                 v-if="input.type === 'input'"
                             />
                             <!-- Select -->
@@ -100,11 +106,11 @@
                                 :name="input.id"
                                 :required="input.required"
                                 inputType="select"
+                                v-model="formData[input.id]"
                                 v-if="input.type === 'select'"
                             >
                                 <option
                                     :value="option.value"
-                                    :selected="option.default"
                                     :required="input.required"
                                     v-for="option in input.options"
                                 >
@@ -117,6 +123,7 @@
                                 :name="input.id"
                                 :placeholder="input.placeholder"
                                 inputType="textarea"
+                                v-model="formData[input.id]"
                                 v-if="input.type === 'textarea'"
                             />
                         </div>
