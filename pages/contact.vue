@@ -2,9 +2,13 @@
     useHead({
         title: 'Contact Us'
     })
+
+    definePageMeta({
+        disableCTA: true
+    })
 </script>
 
-<template :disableCTA="true">
+<template>
     <section>
         <div class="mx-auto container p-6">
             <AppSegment>

@@ -9,7 +9,7 @@
         <slot />
 
         <div class="mt-auto">
-            <template v-if="$attrs.disableCTA">
+            <div v-show="!$route.meta.disableCTA">
                 <AppCTA color="blue">
                     <template #title>
                         Join our maintenance list
@@ -47,7 +47,7 @@
                         </AppButton>
                     </div>
                 </AppCTA>
-            </template>
+            </div>
 
             <AppFooter />
         </div>
