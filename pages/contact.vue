@@ -6,14 +6,25 @@
     definePageMeta({
         disableCTA: true
     })
+
+    const contactForm = {
+        forms: [
+            {
+                
+            }
+        ]
+    };
 </script>
 
 <template>
     <section>
-        <div class="mx-auto container p-6">
-            <AppSegment>
+        <AppSection>
+            <template #title>
+                Contact Us
+            </template>
+            <AppSegment class="max-w-4xl">
                 hello
             </AppSegment>
-        </div>
+        </AppSection>
     </section>
 </template>
