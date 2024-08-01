@@ -1,5 +1,3 @@
-import { randomUUID } from 'node:crypto';
-
 export interface Session {
 	id: string;
 	date_created: string;
@@ -10,7 +8,7 @@ export default defineNuxtRouteMiddleware(() => {
 
 	if (!session.value) {
 		const newSession: Session = {
-			id: randomUUID(),
+			id: self.crypto.randomUUID(),
 			date_created: new Date().toISOString(),
 		};
 
