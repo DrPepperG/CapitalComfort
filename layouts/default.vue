@@ -17,7 +17,7 @@
                     <template #description>
                         Don't worry about being locked into unnecessary contracts, we reach out to you each Spring/Fall! 
                     </template>
-                    <div class="mt-4">
+                    <div class="flex mt-4">
                         <AppButton to="contact" size="big" color="orange">
                             Get Added!
                         </AppButton>
@@ -41,7 +41,7 @@
                             </NuxtLink>
                         </li>
                     </ul>
-                    <div class="mt-6">
+                    <div class="flex mt-4">
                         <AppButton to="contact" size="big" color="blue">
                             Contact Us
                         </AppButton>

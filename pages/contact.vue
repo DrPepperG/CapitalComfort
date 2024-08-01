@@ -1,16 +1,15 @@
 <script setup lang="ts">
     useHead({
         title: 'Contact Us'
-    })
+    });
 
     definePageMeta({
         disableCTA: true
-    })
+    });
 
     const contactForm: {
         forms: {
             id: string,
-            fullWidth?: boolean,
             title: string,
             placeholder?: string
             type: 'input' | 'select' | 'textarea'
@@ -18,7 +17,9 @@
             options?: {
                 value: string,
                 default?: boolean
-            }[]
+            }[],
+            fullWidth?: boolean,
+            required?: boolean
         }[]
     } = {
         forms: [
@@ -27,40 +28,51 @@
                 title: 'First Name',
                 placeholder: 'John',
                 type: 'input',
-                inputType: 'text'
+                inputType: 'text',
+                required: true,
             },
             {
                 id: 'last_name',
                 title: 'Last Name',
-                placeholder: 'Wick',
+                placeholder: 'Doe',
                 type: 'input',
-                inputType: 'text'
+                inputType: 'text',
+                required: true,
             },
             {
-                id: 'text',
-                title: 'Message',
-                type: 'textarea',
-                fullWidth: true
+                id: 'email',
+                title: 'Email',
+                placeholder: 'john.doe@gmail.com',
+                type: 'input',
+                inputType: 'email',
+                fullWidth: true,
+                required: true,
             },
             {
                 id: 'reason',
                 title: 'Reason',
                 type: 'select',
                 fullWidth: true,
+                required: true,
                 options: [
                     {
-                        value: 'test',
+                        value: 'Maintenance List',
                         default: true
                     },
                     {
-                        value: 'not default'
+                        value: 'General Question'
                     }
                 ]
-            }
+            },
+            {
+                id: 'text',
+                title: 'Message',
+                type: 'textarea',
+                required: true,
+                fullWidth: true
+            },
         ]
     };
-
-    const inputCss = "mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-cc-blue focus:ring focus:ring-cc-blue focus:ring-opacity-50"
 </script>
 
 <template>
@@ -70,44 +82,49 @@
                 Contact Us
             </template>
             <AppSegment class="max-w-4xl">
-                <form class="text-black" @submit.prevent="console.log">
+                <form class="text-black" @submit.prevent>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div v-for="input in contactForm.forms" :class="{ 'col-span-2': input.fullWidth }">
-                            <label class="block">
-                                <span class="text-white">{{ input.title }}</span>
-                                <!-- Input -->
-                                <input 
-                                    :class="[inputCss]"
-                                    :name="input.id"
-                                    :type="input.inputType"
-                                    :placeholder="input.placeholder"
-                                    v-if="input.type === 'input'"
+                        <div v-for="input in contactForm.forms" :class="{ 'md:col-span-2': input.fullWidth }">
+                            <!-- Input -->
+                            <AppInput
+                                :title="input.title"
+                                :name="input.id"
+                                :type="input.inputType"
+                                :placeholder="input.placeholder"
+                                :required="input.required"
+                                v-if="input.type === 'input'"
+                            />
+                            <!-- Select -->
+                            <AppInput
+                                :title="input.title"
+                                :name="input.id"
+                                :required="input.required"
+                                inputType="select"
+                                v-if="input.type === 'select'"
+                            >
+                                <option
+                                    :value="option.value"
+                                    :selected="option.default"
+                                    :required="input.required"
+                                    v-for="option in input.options"
                                 >
-                                <!-- Select -->
-                                <select
-                                    :class="[inputCss]"
-                                    :name="input.id"
-                                    v-if="input.type === 'select'"
-                                >
-                                    <option
-                                        :value="option.value"
-                                        :selected="option.default"
-                                        v-for="option in input.options"
-                                    >
-                                        {{ option.value }}
-                                    </option>
-                                </select>
-                                <!-- Textarea -->
-                                <textarea
-                                    :class="[inputCss]"
-                                    :name="input.id"
-                                    :placeholder="input.placeholder"
-                                    v-if="input.type === 'textarea'"
-                                />
-                            </label>
-
-
+                                    {{ option.value }}
+                                </option>
+                            </AppInput>
+                            <!-- Textarea -->
+                            <AppInput
+                                :title="input.title"
+                                :name="input.id"
+                                :placeholder="input.placeholder"
+                                inputType="textarea"
+                                v-if="input.type === 'textarea'"
+                            />
                         </div>
+                    </div>
+                    <div class="mt-4">
+                        <AppButton color="blue" size="bigFull" type="button">
+                            Submit
+                        </AppButton>
                     </div>
                 </form>
             </AppSegment>
