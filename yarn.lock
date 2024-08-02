@@ -975,7 +975,7 @@
     unimport "^3.9.0"
     untyped "^1.4.2"
 
-"@nuxt/scripts@^0.6.0":
+"@nuxt/scripts@^0.6.0", "@nuxt/scripts@^0.6.5":
   version "0.6.5"
   resolved "https://registry.npmjs.org/@nuxt/scripts/-/scripts-0.6.5.tgz"
   integrity sha512-7O9cFwRD/kWItQ68MQDMXxV+jugP+6RFr2d/2ADCp4YO5Wqb1kfKJtaCGHBTzQVLzrGomy38kaw++fI4I9yA+A==
