@@ -41,12 +41,19 @@
                 required: true,
             },
             {
+                id: 'phone_number',
+                title: 'Phone Number',
+                placeholder: '919-779-5950',
+                type: 'input',
+                inputType: 'tel',
+                required: true,
+            },
+            {
                 id: 'email',
                 title: 'Email',
                 placeholder: 'john.doe@gmail.com',
                 type: 'input',
                 inputType: 'email',
-                fullWidth: true,
                 required: true,
             },
             {
@@ -70,7 +77,7 @@
                 title: 'Message',
                 type: 'textarea',
                 required: true,
-                fullWidth: true
+                fullWidth: true,
             },
         ],
     };
