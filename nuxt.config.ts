@@ -6,15 +6,32 @@ export default defineNuxtConfig({
         'nuxt-gtag',
         'nuxt-simple-robots',
         '@nuxtjs/tailwindcss',
-        "@nuxt/image"
+        '@nuxt/image',
+        '@nuxtjs/turnstile'
     ],
+
     sitemap: {
         autoLastmod: true
     },
-    directus: {
-        url: 'https://cms.capitalcomfort.net/'
-    },
+
     gtag: {
         id: 'G-34S1BJ1B1F'
-    }
+    },
+
+    turnstile: {
+        siteKey: '3x00000000000000000000FF'
+    },
+
+    runtimeConfig: {
+        public: {
+            directus: {
+                url: 'https://cms.capitalcomfort.net/'
+            },
+        },
+        turnstile: {
+            secretKey: '2x0000000000000000000000000000000AA',
+        },
+    },
+
+    compatibilityDate: '2024-08-01'
 })

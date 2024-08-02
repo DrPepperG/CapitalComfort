@@ -2,6 +2,10 @@
     useHead({
         title: 'Privacy Policy'
     })
+
+    definePageMeta({
+        disableCTA: true
+    })
 </script>
 
 <template>
