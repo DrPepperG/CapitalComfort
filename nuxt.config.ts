@@ -28,6 +28,9 @@ export default defineNuxtConfig({
                 url: 'https://cms.capitalcomfort.net/'
             },
         },
+        directus: {
+            token: ''
+        },
         turnstile: {
             secretKey: '2x0000000000000000000000000000000AA',
         },
