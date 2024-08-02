@@ -16,12 +16,12 @@
             inputType?: 'text' | 'password' | 'email' | 'number' | 'url' | 'date' | 'datetime-local' | 'month' | 'week' | 'time' | 'search' | 'tel' | 'checkbox' | 'radio',
             options?: {
                 value: string,
+                default?: boolean,
             }[],
             fullWidth?: boolean,
             required?: boolean
         }[]
-    }
-
+    };
     const contactForm: ContactForm = {
         forms: [
             {
@@ -57,7 +57,8 @@
                 required: true,
                 options: [
                     {
-                        value: 'Maintenance List'
+                        value: 'Maintenance List',
+                        default: true
                     },
                     {
                         value: 'General Question'
@@ -74,20 +75,66 @@
         ],
     };
 
-    const formData: any = ref({
-        reason: 'Maintenance List'
-    })
+    const formData: any = ref({});
+    function setupForm() {
+        // Reset form
+        formData.value = {};
+
+        // Select a default option
+        Object.values(contactForm.forms).forEach((input) => {
+            if (input.options) {
+                input.options.forEach((option) => {
+                    if (option.default) {
+                        formData.value[input.id] = option.value
+                    }
+                })
+            }
+        })
+    }
+    setupForm();
+
+    const token = ref();
+    const status= ref<'pending' | 'sending' | 'sent' | 'error'>('pending');
+
+    async function submitForm() {
+        // Set to sending
+        status.value = 'sending'
+
+        $fetch('/api/contact', {
+            method: 'POST',
+            body: {
+                form: formData.value,
+                token: token.value
+            }
+        }).then(() => {
+            // Set to sent
+            status.value = 'sent';
+            // Remove previous values
+            setupForm();
+        }).catch(() => {
+            status.value = 'error';
+        })
+    };
 </script>
 
 <template>
-    {{ formData }}
     <section>
         <AppSection>
             <template #title>
                 Contact Us
             </template>
             <AppSegment class="max-w-4xl">
-                <form class="text-black" @submit.prevent>
+                <div v-if="status === 'sent'">
+                    <AppSegment color="green">
+                        Your message has been successfully sent, we've cleared the contact form for you.
+                    </AppSegment>
+                </div>
+                <div v-else-if="status === 'error'">
+                    <AppSegment color="red">
+                        An error has occurred, please double check your message and try again.
+                    </AppSegment>
+                </div>
+                <form class="text-black" @submit.prevent="submitForm">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div v-for="input in contactForm.forms" :class="{ 'md:col-span-2': input.fullWidth }">
                             <!-- Input -->
@@ -129,10 +176,11 @@
                         </div>
                     </div>
                     <div class="mt-4">
-                        <AppButton color="blue" size="bigFull" type="button">
+                        <AppButton color="blue" size="bigFull" type="button" :disabled="status === 'sending'">
                             Submit
                         </AppButton>
                     </div>
+                    <NuxtTurnstile class="mt-2" v-model="token" />
                 </form>
             </AppSegment>
         </AppSection>
