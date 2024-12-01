@@ -131,6 +131,11 @@
                 Contact Us
             </template>
             <AppSegment class="max-w-4xl">
+                <AppSegment color="blue">
+                    <p class="font-bold">
+                        Please do not send service requests on this form, contact us using the listed phone number above!
+                    </p>
+                </AppSegment>
                 <div v-if="status === 'sent'">
                     <AppSegment color="green">
                         Your message has been successfully sent, we've cleared the contact form for you.
